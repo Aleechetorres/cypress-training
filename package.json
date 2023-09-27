@@ -1,0 +1,24 @@
+{
+  "name": "cypress-training",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Aleechetorres/cypress-training.git"
+  },
+  "keywords": [
+    "ui-testing",
+    "practice",
+    "cypress"
+  ],
+  "author": "Alejandra aleechetorres@gmail.com Aleechetorres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aleechetorres/cypress-training/issues"
+  },
+  "homepage": "https://github.com/Aleechetorres/cypress-training#readme"
+}
