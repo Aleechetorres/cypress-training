@@ -1,17 +1,10 @@
 import { defineConfig } from "cypress";
 
-export default defineConfig({
-    // setupNodeEvents can be defined in either
-    // the e2e or component configuration
+module.exports = defineConfig({
     e2e: {
-        video: false,
-        screenshotOnRunFailure: false,
-        setupNodeEvents(on, config) {
-            // modify config values examples
-            // config.defaultCommandTimeout = 10000
-
-            // IMPORTANT return the updated config object
-            return config;
-        },
+      setupNodeEvents(on, config) {},
+      baseUrl: "https://www.demoblaze.com/index.html",
+      defaultCommandTimeout: 50000,
+      pageLoadTimeout: 50000,
     },
-});
+  });
