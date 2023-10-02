@@ -5,8 +5,8 @@ describe("Log in feature", () => {
     // Realizar el login a la página
     cy.get("#login2").click();
     //cy.wait(500);
-    cy.get("#loginusername").type("aleechetorres");
-    cy.get("#loginpassword").type("1234567");
+    cy.get("#loginusername").type("aleechetorres",{force:true});
+    cy.get("#loginpassword").type("1234567",{force:true});
     cy.get(".btn-primary").contains("Log in").click();
 
     // Validar que el login y usuario username corresponden a la sesión iniciada
