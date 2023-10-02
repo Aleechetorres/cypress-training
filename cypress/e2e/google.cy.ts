@@ -2,9 +2,8 @@ describe("Log in feature", () => {
   beforeEach(() => {
     cy.visit("https://www.demoblaze.com/index.html");
     
-    // Realizar el login a la página
     cy.get("#login2").click();
-    //cy.wait(500);
+    
     cy.get("#loginusername").type("aleechetorres",{force:true});
     cy.get("#loginpassword").type("1234567",{force:true});
     cy.get(".btn-primary").contains("Log in").click();
@@ -17,7 +16,7 @@ describe("Log in feature", () => {
     cy.get(".card-title").contains("Iphone 6 32gb").click();
     cy.get("#tbodyid").should("contain", "Iphone 6 32gb");
     cy.get(".btn-lg").contains("Add to cart").click();
-    //cy.wait(500);
+    
   });
 
   it("Añadir Laptop al carrito y validar que el nombre corresponde al item seleccionado", () => {
@@ -26,7 +25,7 @@ describe("Log in feature", () => {
     cy.get(".card-title").contains("MacBook Pro").click();
     cy.get("#tbodyid").should("contain", "MacBook Pro");
     cy.get(".btn-lg").contains("Add to cart").click();
-    //cy.wait(500);
+    
   });
 
   it("Añadir Monitor al carrito y validar que el nombre corresponde al item seleccionado", () => {
@@ -35,7 +34,7 @@ describe("Log in feature", () => {
     cy.get(".card-title").contains("Apple monitor 24").click();
     cy.get("#tbodyid").should("contain", "Apple monitor 24");
     cy.get(".btn-lg").contains("Add to cart").click();
-    //cy.wait(500);
+    
   });
 
   it("Validar lo que hay en el carrito y que el total corresponde", () => {
@@ -51,7 +50,6 @@ describe("Log in feature", () => {
     });
   
     cy.get("table tbody tr td").then(() => {
-      // Hacer la validación después de la iteración
       cy.get("#totalp").should("contain", suma);
     });
   });
@@ -60,7 +58,6 @@ describe("Log in feature", () => {
 
   it("Completar la compra", () =>{
     cy.get(".nav-link").contains("Cart").click();
-    //cy.wait(2000);
     cy.get(".btn-success").contains("Place Order").click();
     cy.get("#name").type('Alejandra Echeverri');
     cy.get("#country").type('Colombia');
@@ -69,13 +66,11 @@ describe("Log in feature", () => {
     cy.get("#month").type('06');
     cy.get("#year").type('2026');
     cy.get(".btn-primary").contains("Purchase").click();
-    //cy.wait(1500);
     cy.get(".btn-primary").contains("OK").click();
   })
 
   it("Enviar un mensaje a través de Contact", () => {
     cy.get(".nav-link").contains("Contact").click();
-    //cy.wait(2000);
     cy.get("#recipient-email").type('aleechetorres@gmail.com');
     cy.get("#recipient-name").type('Aleja Echeverri');
     cy.get("#message-text").type('Serás muy buena en QA <3');
