@@ -20,19 +20,27 @@ describe("Log in feature", () => {
     loginPage.verfifylogInOption();
   });
 
-  it("Añadir elementos al carrito y validar que el nombre corresponde al item seleccionado", () => {
-    categoriesPage.addElementsToCart(elementToAdd);
+  it("Add products to cart", () => {
+    categoriesPage.addElementToCart(elementToAdd);
   });
 
-  it("Validar lo que hay en el carrito y que el total corresponde", () => {
+  it("Verify that Product Tittle corresponds", () => {
+    categoriesPage.verifyTitleElement(elementToAdd);
+  });
+
+  it("Verify the products in the cart", () => {
+    cartPage.goToCart(elementToAdd);
+  });
+
+  it("Verify total products value", () => {
     cartPage.addUpAllElementsValues();
   });
   
-  it("Completar la compra", () =>{
+  it("Complete the purchase", () =>{
     purchasePage.completePurchase();
-  })
+  });
 
-  it("Enviar un mensaje a través de Contact", () => {
+  it("Send message through 'Contact'", () => {
     contact.sendMessage();
-  })
+  });
 });

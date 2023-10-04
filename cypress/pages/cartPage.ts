@@ -6,9 +6,15 @@ class CartPage{
     this.cartTotal = "#totalp"
   }
 
+  goToCart(elements){
+    cy.get(this.navBarSelector).contains(this.cart).click();
+    elements.forEach(element => {
+      cy.get(this.cartValues).should("contain", element.name);
+    });
+  }
+  
   addUpAllElementsValues(){
     cy.get(this.navBarSelector).contains(this.cart).click();
-  
     let suma = 0;
   
     cy.get(this.cartValues).each((cell) => {
