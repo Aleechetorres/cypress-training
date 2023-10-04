@@ -1,9 +1,3 @@
-/* import LoginPage from '../pages/homePage';
-import CategoriesPage from '../pages/shoppingPage';
-import CartPage from '../pages/cartPage';
-import PurchasePage from '../pages/purchasePage'
-import Contact from '../pages/contactPage'; */
-
 import {LoginPage, CategoriesPage, CartPage, PurchasePage, Contact} from '../pages/index'
 
 const loginPage = new LoginPage();
@@ -12,22 +6,22 @@ const cartPage = new CartPage();
 const purchasePage = new PurchasePage();
 const contact = new Contact();
 
+const products = Cypress.env("Products");
+
+const phoneElement = products.phoneElement;
+const laptopElement = products.laptopElement;
+const monitorElement = products.monitorElement;
+
+const elementToAdd = [phoneElement, laptopElement, monitorElement];
+
 describe("Log in feature", () => {
   beforeEach(() => {
     cy.visit("https://www.demoblaze.com/index.html");
     loginPage.verfifylogInOption();
   });
 
-  it("Añadir celular al carrito y validar que el nombre corresponde al item seleccionado", () => {
-    categoriesPage.addPhoneToCart();
-  });
-
-  it("Añadir Laptop al carrito y validar que el nombre corresponde al item seleccionado", () => {
-    categoriesPage.addLaptopToCart();
-  });
-
-  it("Añadir Monitor al carrito y validar que el nombre corresponde al item seleccionado", () => {
-    categoriesPage.addMonitorToCart();
+  it("Añadir elementos al carrito y validar que el nombre corresponde al item seleccionado", () => {
+    categoriesPage.addElementsToCart(elementToAdd);
   });
 
   it("Validar lo que hay en el carrito y que el total corresponde", () => {

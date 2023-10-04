@@ -14,9 +14,18 @@ module.exports = defineConfig({
       },
 
       Products: {
-        cellphone: 'Iphone 6 32gb',
-        laptop: 'MacBook Pro',
-        monitor: 'Apple monitor 24'
+        phoneElement: {
+          name: 'Iphone 6 32gb',
+          category: "Phones"
+        },
+        laptopElement: {
+          name: 'MacBook Pro',
+          category: "Laptops"
+        },
+        monitorElement:{
+          name: 'Apple monitor 24',
+          category: "Monitors"
+        }
       },
 
       PlaceOrder: {

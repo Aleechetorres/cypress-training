@@ -8,31 +8,17 @@ class CategoriesPage {
     this.addToCartBtn = "Add to cart"
     this.navBarSelector = ".nav-link",
     this.home = "Home",
-    this.categoriesSelector = ".list-group-item",
-    this.laptopCategory = "Laptops",
-    this.monitorCategory = "Monitors"
+    this.categoriesSelector = ".list-group-item"
   }
 
-  addPhoneToCart(){
-    cy.get(this.elementSelector).contains(products.cellphone).click();
-    cy.get(this.containerElement).should("contain", products.cellphone);
-    cy.get(this.addToCart).contains(this.addToCartBtn ).click();
-  }
-
-  addLaptopToCart(){
-    cy.get(this.navBarSelector).contains(this.home).click();
-    cy.get(this.categoriesSelector).contains(this.laptopCategory).click();
-    cy.get(this.elementSelector).contains(products.laptop).click();
-    cy.get(this.containerElement).should("contain", products.laptop);
-    cy.get(this.addToCart).contains(this.addToCartBtn ).click();
-  }
-
-  addMonitorToCart(){
-    cy.get(this.navBarSelector).contains(this.home).click();
-    cy.get(this.categoriesSelector).contains(this.monitorCategory).click();
-    cy.get(this.elementSelector).contains(products.monitor).click();
-    cy.get(this.containerElement).should("contain", products.monitor);
-    cy.get(this.addToCart).contains(this.addToCartBtn ).click();
+  addElementsToCart(elements) {
+    elements.forEach(element => {
+      cy.get(this.navBarSelector).contains(this.home).click();
+      cy.get(this.categoriesSelector).contains(element.category).click();
+      cy.get(this.elementSelector).contains(element.name).click();
+      cy.get(this.containerElement).should("contain", element.name);
+      cy.get(this.addToCart).contains(this.addToCartBtn).click();
+    });
   }
 }
 
