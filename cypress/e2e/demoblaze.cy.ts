@@ -11,7 +11,7 @@ const phoneElement = products.phoneElement;
 const laptopElement = products.laptopElement;
 const monitorElement = products.monitorElement;
 
-describe("Log in feature", () => {
+describe("Test to demoblaze page - Login - Purchase - Send a message", () => {
   beforeEach(() => {
     cy.clearAllCookies()
     cy.visit("https://www.demoblaze.com/index.html");
@@ -21,12 +21,15 @@ describe("Log in feature", () => {
   it("Add products to cart and verify Title Product", () => {
     shoppingPage.addElementToCart(phoneElement);
     cy.get(".btn-lg").contains("Add to cart").click();
+    shoppingPage.verifyElementAdded(phoneElement);
     cy.get(".nav-link").contains("Home").click();
     shoppingPage.addElementToCart(laptopElement);
     cy.get(".btn-lg").contains("Add to cart").click();
+    shoppingPage.verifyElementAdded(laptopElement);
     cy.get(".nav-link").contains("Home").click();
     shoppingPage.addElementToCart(monitorElement);
     cy.get(".btn-lg").contains("Add to cart").click();
+    shoppingPage.verifyElementAdded(monitorElement);
     cy.get(".nav-link").contains("Home").click();
   });
 

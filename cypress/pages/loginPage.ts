@@ -1,6 +1,13 @@
 const user = Cypress.env("User");
 
 class LoginPage {
+
+  private logInOption
+  private logInSelector
+  private userNameInput
+  private passwordInput
+  private nameOfUserSelector
+
   constructor() {
     this.logInOption = "Log in";
     this.logInSelector = "#login2";

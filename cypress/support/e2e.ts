@@ -17,5 +17,6 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+// Ignoring uncaught exceptions since errors from external apps should not stop de workshop
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
