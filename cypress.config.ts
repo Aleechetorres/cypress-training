@@ -41,6 +41,20 @@ module.exports = defineConfig({
         email: 'aleechetorres@gmail.com',
         name: 'Aleja Echeverri',
         message: 'Espero ser muy buena en QA <3'
+      },
+
+      UserInfoForm: { 
+        name: 'Alejandra',
+        lastname: 'Echeverri',
+        email: 'ale@gmail.com',
+        gender: 'Female',
+        number: '3012144284',
+        year: '1991',
+        subject: 'Computer Science{enter}',
+        hobbies: 'Sports',
+        address: 'Cra 21-21',
+        state: 'Haryana{enter}',
+        city: 'Karnal{enter}'
       }
     }
   });
