@@ -35,5 +35,8 @@
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }
