@@ -38,11 +38,11 @@ class FillingForm {
     cy.get(this.dateOfBirth).click();
     cy.get(this.yearBirth).select(userInfoForm.year);
     cy.get(this.dayBith).click();
-    cy.get(this.subject).type(userInfoForm.subject);
+    cy.get(this.subject).type(`${userInfoForm.subject}{enter}`);
     cy.contains(userInfoForm.hobbies).click();
     cy.get(this.address).type(userInfoForm.address,{force:true});
-    cy.get(this.state).type(userInfoForm.state,{force:true});
-    cy.get(this.city).type(userInfoForm.city,{force:true});  
+    cy.get(this.state).type(`${userInfoForm.state}{enter}`,{force:true});
+    cy.get(this.city).type(`${userInfoForm.city}{enter}`,{force:true});  
   }
 }
 

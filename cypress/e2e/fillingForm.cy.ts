@@ -20,10 +20,11 @@ describe("Test to Form Page: Fill form - Validate modal info ", () => {
     .and("contain", userInfoForm.gender)
     .and("contain", userInfoForm.number)
     .and("contain", "24 October,1991")
-    .and("contain", "Computer Science")
+    .and("contain", userInfoForm.subject)
     .and("contain", userInfoForm.hobbies)
     .and("contain", userInfoForm.address)
-    .and("contain", "Haryana Karnal");
+    .and("contain", userInfoForm.state)
+    .and("contain", userInfoForm.city);
     cy.get("#closeLargeModal").click({ force: true });
   });
 });

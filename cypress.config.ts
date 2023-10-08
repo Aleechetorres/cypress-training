@@ -2,7 +2,14 @@ import { defineConfig } from "cypress";
 
 module.exports = defineConfig({
     e2e: {
-      setupNodeEvents(on, config) {},
+      setupNodeEvents(on, config) {
+        on('task', {
+          isFileExist(filePath) {
+            const fs = require('fs');
+            return fs.existsSync(filePath);
+          }
+        });
+      },
       baseUrl: "https://www.demoblaze.com/index.html",
       defaultCommandTimeout: 50000,
       pageLoadTimeout: 50000,
@@ -51,11 +58,11 @@ module.exports = defineConfig({
         gender: 'Female',
         number: '3012144284',
         year: '1991',
-        subject: 'Computer Science{enter}',
+        subject: 'Computer Science',
         hobbies: 'Sports',
         address: 'Cra 21-21',
-        state: 'Haryana{enter}',
-        city: 'Karnal{enter}'
+        state: 'Haryana',
+        city: 'Karnal'
       },
       "compilerOptions": {
         "types": ["cypress", "cypress-file-upload"]

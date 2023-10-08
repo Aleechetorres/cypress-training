@@ -37,6 +37,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "cy-verify-downloads": "^0.2.1",
     "cypress-file-upload": "^5.0.8"
   }
 }
