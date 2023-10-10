@@ -10,7 +10,7 @@ module.exports = defineConfig({
           }
         });
       },
-      baseUrl: "https://www.demoblaze.com/index.html",
+      //baseUrl: "https://www.demoblaze.com/index.html",
       defaultCommandTimeout: 50000,
       pageLoadTimeout: 50000,
     },

@@ -1,5 +1,8 @@
 // ***********************************************
 import 'cypress-xpath';
+import 'cypress-iframe';
+
+
 require('cy-verify-downloads').addCustomCommand();
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -27,7 +30,7 @@ require('cy-verify-downloads').addCustomCommand();
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // cypress/support/commands.js
 
-Cypress.Commands.add('checkFileExistence:', (filePath) => {
+Cypress.Commands.add('checkFileExistence', (filePath) => {
   cy.task('isFileExist', filePath).then((doesExist) => {
     expect(doesExist).to.be.true;  // Verificar que el archivo existe
   });

@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "cy-verify-downloads": "^0.2.1",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1"
   }
 }
