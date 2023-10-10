@@ -37,14 +37,14 @@ describe("Test to demoblaze page - Login - Purchase - Send a message", () => {
     cy.get(".nav-link").contains("Cart").click();
 
     let suma = 0;
-    cy.get("table tbody tr td").each((cell) => {
+    cy.get("table tbody tr td:nth-child(3)").each((cell) => {
       const value = parseFloat(cell.text());
       if (!isNaN(value)) {
         suma += value;
       }
     });
 
-    cy.get("table tbody tr td").then(() => {
+    cy.get("table tbody tr td:nth-child(3)").then(() => {
       cy.get("#totalp").should("contain", suma);
     });
   });
