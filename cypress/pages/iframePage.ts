@@ -1,20 +1,11 @@
 import 'cypress-iframe';
-
-
 class IframePage {
 
   private iframeSelector
-  private logInSelector
-  private userNameInput
-  private passwordInput
-  private nameOfUserSelector
+  
 
   constructor() {
     this.iframeSelector = 'iframe[src="default.asp"]';
-    this.logInSelector = "#login2";
-    this.userNameInput = "#loginusername",
-    this.passwordInput = "#loginpassword",
-    this.nameOfUserSelector = "#nameofuser"
   }
 
   visit(){
