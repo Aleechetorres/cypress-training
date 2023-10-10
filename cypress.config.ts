@@ -7,6 +7,7 @@ module.exports = defineConfig({
       defaultCommandTimeout: 50000,
       pageLoadTimeout: 50000,
     },
+    
     env:{
       User: {
       userName: 'aleechetorres',
@@ -55,6 +56,10 @@ module.exports = defineConfig({
         address: 'Cra 21-21',
         state: 'Haryana{enter}',
         city: 'Karnal{enter}'
+      },
+      "compilerOptions": {
+        "types": ["cypress", "cypress-file-upload"]
       }
-    }
+    },
+    
   });
