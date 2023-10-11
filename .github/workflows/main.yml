@@ -22,7 +22,4 @@ jobs:
               run: npm run lint
 
             - name: UI E2E Tests
-              uses: cypress-io/github-action@v4
-              with:
-                  browser: chrome
-                  headed: true
+              run: xvfb-run cypress run --headed --browser chrome --spec 'cypress/e2e/**/*.cy.ts'
