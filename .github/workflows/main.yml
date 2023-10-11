@@ -18,6 +18,9 @@ jobs:
             - name: Install
               run: npm ci
 
+            - name: Maximize Browser Window
+              run: npx cypress run --browser chrome --headed --config viewportWidth=1920,viewportHeight=1080
+
             - name: Code style
               run: npm run lint
 

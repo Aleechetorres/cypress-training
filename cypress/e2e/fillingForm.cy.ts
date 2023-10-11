@@ -9,6 +9,7 @@ const fillingForm = new FillingForm;
 describe("Test to Form Page: Fill form - Validate modal info ", () => {
   it("Fill form - Validate modal info", () => {
     cy.visit("https://demoqa.com/automation-practice-form");
+    cy.get('div#app').should('exist');
     fillingForm.fillingForm();
     cy.get("#submit").click({force:true});
     //Validate that the modal appears
