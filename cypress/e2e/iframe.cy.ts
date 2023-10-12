@@ -1,27 +1,24 @@
 import 'cypress-iframe';
+import { IframePage } from '../pages/index';
 
-import {IframePage} from '../pages/index';
+const iframePage = new IframePage();
 
-const iframePage = new IframePage;
-
-describe('Test de iframe en W3Schools', () => {
-  it('debería interactuar con el iframe', () => {
-
-    //valida que el Iframe fué cargado
+describe('Test to Iframe Page', () => {
+  beforeEach(() => {
     iframePage.visit();
+  });
 
-    //Muestra un iframe que contiene HTML Tutorial
+  it('Validate that the Iframe is displayed and contains the title: HTML Tutorial', () => {
     iframePage.getFrameTitle();
-   
+  });
 
-    //Ingresa al segundo iframe
+  it('Validate that an Iframe is displayed in the CSS option', () => {
     iframePage.goToCssPageInFrame();
-   
+  });
 
-    //Valida el contenido del segundo iframe
+  it('Validate CSS page content within the iframe', () => {
     cy.enter('iframe[src="default.asp"]').then(getBody => {
       getBody().find('.color_h1').should('be.visible').should('contain', 'Tutorial');
     });
-
-    });
   });
+});
