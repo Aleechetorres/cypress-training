@@ -10,7 +10,7 @@ class IframePage {
 
   visit(){
     cy.intercept({ resourceType: /xhr|fetch/ }, { log: false })
-    cy.visit('https://www.w3schools.com/html/html_iframe.asp')
+    cy.visit('https://www.w3schools.com/html/html_iframe.asp', { failOnStatusCode: false })
     cy.frameLoaded(this.iframeSelector)
   }
 
