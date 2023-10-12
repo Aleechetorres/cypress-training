@@ -3,6 +3,7 @@ import { defineConfig } from "cypress";
 module.exports = defineConfig({
     e2e: {
       setupNodeEvents(on, config) {
+        config.chromeWebSecurity = false;
         on('task', {
           isFileExist(filePath) {
             const fs = require('fs');
@@ -10,9 +11,11 @@ module.exports = defineConfig({
           }
         });
       },
-      baseUrl: "https://www.demoblaze.com/index.html",
+      /* viewportWidth: 1920,
+      viewportHeight: 1080, */
       defaultCommandTimeout: 50000,
-      pageLoadTimeout: 50000,
+      pageLoadTimeout: 90000,
+      
     },
     
     env:{
@@ -66,7 +69,7 @@ module.exports = defineConfig({
       },
       "compilerOptions": {
         "types": ["cypress", "cypress-file-upload"]
-      }
+      },
     },
     
   });
